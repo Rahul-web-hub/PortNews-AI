@@ -246,7 +246,7 @@ export default function App() {
     setNewsLoading(true);
     setError("");
     try {
-      const res = await axios.get("/api/news");
+      const res = await axios.get("https://portnews-ai-backend.onrender.com/api/news");
       setNews(res.data.headlines);
     } catch (err) {
       setError("Failed to fetch news. Please try again.");
@@ -279,7 +279,7 @@ export default function App() {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("/api/analyze", {
+      const res = await axios.post("https://portnews-ai-backend.onrender.com/api/analyze", {
         portfolio,
         filteredNews: filtered,
       });
